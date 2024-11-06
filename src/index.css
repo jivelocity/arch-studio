@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 225 13% 12%;
+    --grey-dark: 226 6% 40%;
+    --grey-medium: 223 7% 53%;
+    --grey-light: 225 17% 82%;
+    --grey-lightest: 230 21% 95%;
+    --red-error: 0 68% 61%;
+  }
+
+  @font-face {
+    font-family: "LeagueSpartan";
+    src: url("./assets/LeagueSpartan.woff2") format("woff2");
+  }
+}
+
+@layer base {
+  body {
+    @apply text-primary;
+  }
+}
+
+@layer components {
+  .paragraf {
+    @apply text-lg font-medium text-greyDark;
+  }
+}
