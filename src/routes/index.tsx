@@ -37,7 +37,9 @@ function HomeComponent() {
               Small team,
               <br /> big ideas
             </HeadingMedium>
-            <Button className="mt-8">About Us</Button>
+            <Button to="/about" className="mt-8">
+              About Us
+            </Button>
           </div>
         </div>
       </div>
@@ -45,14 +47,19 @@ function HomeComponent() {
       <div className="pb-28 px-8 md:px-0">
         <div className="flex items-center justify-between">
           <HeadingMedium className="mt-3">Featured</HeadingMedium>
-          <Button className="hidden sm:flex">See All</Button>
+          <Button to="/portfolio" className="hidden sm:flex">
+            See All
+          </Button>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12">
           <Card title="Project Del Sol" image="image-del-sol.jpg" index="1" />
           <Card title="228B Tower" image="image-228b.jpg" index="2" />
           <Card title="Le Prototype" image="image-prototype.jpg" index="3" />
         </div>
-        <Button className="sm:hidden flex w-full justify-center mt-8">
+        <Button
+          to="/portfolio"
+          className="sm:hidden flex w-full justify-center mt-8"
+        >
           See All
         </Button>
       </div>

@@ -57,7 +57,9 @@ function ContactDetails({
           <li>Phone: {phone}</li>
         </ul>
       </div>
-      <Button ghost>View on Map</Button>
+      <Button to="#" ghost>
+        View on Map
+      </Button>
     </div>
   );
 }

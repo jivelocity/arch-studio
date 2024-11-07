@@ -1,5 +1,20 @@
 import { Link } from "@tanstack/react-router";
 
+const TABS = [
+  {
+    title: "Portfolio",
+    to: "/portfolio",
+  },
+  {
+    title: "About Us",
+    to: "/about",
+  },
+  {
+    title: "Contact",
+    to: "/contact",
+  },
+];
+
 export default function Navbar() {
   return (
     <nav className="py-14 px-8 md:px-0 flex md:gap-16 items-center">
@@ -11,32 +26,21 @@ export default function Navbar() {
           />
         </svg>
       </Link>
-      <div className="py-2 font-bold text-greyMedium hidden md:flex gap-16 text-lg">
-        <Link
-          to="/portfolio"
-          activeProps={{
-            className: "text-primary",
-          }}
-          activeOptions={{ exact: true }}
-        >
-          Portfolio
-        </Link>
-        <Link
-          to="/about"
-          activeProps={{
-            className: "text-primary",
-          }}
-        >
-          About Us
-        </Link>
-        <Link
-          to="/contact"
-          activeProps={{
-            className: "text-primary",
-          }}
-        >
-          Contact
-        </Link>
+      <div className="py-2 font-bold text-greyMedium gap-16 hidden md:flex text-lg">
+        {TABS.map((tab) => (
+          <Link
+            key={tab.to}
+            to={tab.to}
+            activeProps={{
+              className: "text-primary",
+            }}
+            className="relative px-3 pb-0.5 pt-1 flex items-center"
+            onMouseOver={() => setActiveTab(tab.to)}
+            onMouseLeave={() => setActiveTab(null)}
+          >
+            {tab.title}
+          </Link>
+        ))}
       </div>
     </nav>
   );
